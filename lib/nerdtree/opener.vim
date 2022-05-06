@@ -221,9 +221,11 @@ function! s:Opener._openFile()
         call b:NERDTree.ui.toggleZoom()
     endif
 
-    if self._reuseWindow()
-        return
-    endif
+    " tmurias 05/2022 - It's annoying when it jumps to another tab where the
+    "                   same file is open. Always open here.
+"   if self._reuseWindow()
+"       return
+"   endif
 
     call self._gotoTargetWin()
 
